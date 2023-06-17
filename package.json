@@ -1,0 +1,23 @@
+{
+  "name": "react-rating-star-with-type",
+  "version": "1.1.0",
+  "description": "This simple react rating star component with typescript support made by Ziaul Hoque Founder of Revuers.com",
+  "main": "dist/RatingStar.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "keywords": [
+    "react",
+    "javascript",
+    "typescript"
+  ],
+  "author": "Ziaul Hoque",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^18.2.0",
+    "typescript": "^5.1.3"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.12"
+  }
+}
