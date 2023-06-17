@@ -1,0 +1,12 @@
+# Exclude source files and build scripts
+/src/
+/scripts/
+
+# Exclude development dependencies and test files
+/dev/
+/test/
+/node_modules/
+
+# Exclude editor and IDE-specific files
+.vscode/
+.idea/
