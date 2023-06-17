@@ -16,16 +16,17 @@ import ReactStars from 'react-rating-star-with-type'
 
 export default function app(){
     const [star, setStar] = useState(5);
+
     const onChange=(nextValue)=>{
         setStar(nextValue)
     }
-    return <ReactStars onChange={onChange} value={4.2}  edit={true}  activeColors={[
-                          "red",
-                          "orange",
-                          "#FFCE00",
-                          "#9177FF",
-                          "#8568FC",
-                        ]} />
+    
+    return <ReactStars 
+    onChange={onChange} 
+    value={4.2}  
+    edit={true}  
+    activeColors={[ "red", "orange", "#FFCE00", "#9177FF","#8568FC",]} 
+    />
 }
 
 
@@ -54,7 +55,7 @@ This a list of props that you can pass down to the component:
 | `onChange(new_rating)` | Will be invoked any time the rating is changed | `undefined` | function |
 
 ### Help improve the component
-hit star on gitHub - 
+Hit star on gitHub - [https://github.com/ziaulhoque24/react-rating-star-with-type](https://github.com/ziaulhoque24/react-rating-star-with-type)
 
 ### Requirements
 You will need to have React in your project in order to use the component, I didn't bundle React in the build, because it seemed like a crazy idea.
