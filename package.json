@@ -2,6 +2,10 @@
   "name": "react-rating-star-with-type",
   "version": "1.1.0",
   "description": "This simple react rating star component with typescript support made by Ziaul Hoque Founder of Revuers.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ziaulhoque24/react-rating-star-with-type"
+  },
   "main": "dist/RatingStar.js",
   "scripts": {
     "build": "tsc"
