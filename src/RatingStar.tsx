@@ -1,12 +1,12 @@
-import { CSSProperties, ReactNode, memo, useState } from "react";
+import React, { CSSProperties, ReactNode, memo, useState } from "react";
 import { BsStar, BsStarFill, BsStarHalf } from "./icons";
-import React from "react";
 
 export interface IRatingStarProps {
   value?: number;
   count?: number;
   size?: number | string;
   isEdit?: boolean;
+  isHalf?: boolean;
   valueShow?: boolean;
   emptyIcon?: ReactNode;
   halfIcon?: ReactNode;
@@ -25,6 +25,7 @@ function RatingStar(props: IRatingStarProps) {
     count = 5,
     size = 14,
     isEdit = false,
+    isHalf = false,
     valueShow = false,
     emptyIcon = <BsStar />,
     halfIcon = <BsStarHalf />,
@@ -44,12 +45,25 @@ function RatingStar(props: IRatingStarProps) {
   const [currentValue, setCurrentValue] = useState<number>(value);
   const [color, setColor] = useState<string>(initialColor);
 
-  const clickHandler = (nextValue: number) => {
+  const clickHandler = (nextValue: number, e: any) => {
     if (!isEdit) return;
+    const value = nextValue;
+    if (isHalf) {
+      const xPos =
+        (e.pageX - e.currentTarget?.getBoundingClientRect()?.left) /
+        e.currentTarget?.offsetWidth;
+
+      if (xPos <= 0.5) {
+        nextValue -= 0.5;
+      }
+    }
+
     setCurrentValue(nextValue);
-    if (typeof onChange === "function") onChange(nextValue);
-    const color = activeColors[nextValue - 1]
-      ? activeColors[nextValue - 1]
+
+    // color set
+    if (typeof onChange === "function") onChange(value);
+    const color = activeColors[value - 1]
+      ? activeColors[value - 1]
       : activeColor;
     setColor(color);
   };
@@ -90,7 +104,7 @@ function RatingStar(props: IRatingStarProps) {
 
             return (
               <span
-                onClick={() => clickHandler(index + 1)}
+                onClick={(e) => clickHandler(index + 1, e)}
                 key={index}
                 style={{
                   color: starColor,
