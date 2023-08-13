@@ -61,7 +61,7 @@ function RatingStar(props: IRatingStarProps) {
     setCurrentValue(nextValue);
 
     // color set
-    if (typeof onChange === "function") onChange(value);
+    if (typeof onChange === "function") onChange(nextValue);
     const color = activeColors[value - 1]
       ? activeColors[value - 1]
       : activeColor;
