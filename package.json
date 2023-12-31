@@ -1,6 +1,6 @@
 {
   "name": "react-rating-star-with-type",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "This simple react rating star component with typescript support made by Ziaul Hoque Founder of Revuers.com",
   "repository": {
     "type": "git",
@@ -8,7 +8,8 @@
   },
   "main": "dist/RatingStar.js",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "publish": "npm publish"
   },
   "keywords": [
     "react",
