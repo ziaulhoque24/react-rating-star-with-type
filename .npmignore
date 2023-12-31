@@ -2,6 +2,9 @@
 /src/
 /scripts/
 
+# Exclude example source files
+/rating-star-example/
+
 # Exclude development dependencies and test files
 /dev/
 /test/
