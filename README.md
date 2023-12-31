@@ -27,7 +27,7 @@ export default function app(){
     return <ReactStars 
     onChange={onChange} 
     value={4.2}  
-    edit={true}  
+    isEdit={true}  
     activeColors={[ "red", "orange", "#FFCE00", "#9177FF","#8568FC",]} 
     />
 }

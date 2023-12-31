@@ -1,4 +1,10 @@
-import React, { CSSProperties, ReactNode, memo, useState } from "react";
+import React, {
+  CSSProperties,
+  ReactNode,
+  memo,
+  useEffect,
+  useState,
+} from "react";
 import { BsStar, BsStarFill, BsStarHalf } from "./icons";
 
 export interface IRatingStarProps {
@@ -38,9 +44,7 @@ function RatingStar(props: IRatingStarProps) {
     classNames = "",
   } = props;
 
-  const initialColor = activeColors[Math.round(value) - 1]
-    ? activeColors[Math.round(value) - 1]
-    : activeColor;
+  const initialColor = activeColors[Math.round(value) - 1] || activeColor;
 
   const [currentValue, setCurrentValue] = useState<number>(value);
   const [color, setColor] = useState<string>(initialColor);
@@ -68,6 +72,14 @@ function RatingStar(props: IRatingStarProps) {
     setColor(color);
   };
 
+  useEffect(() => {
+    // Update local state when the value prop changes
+    setCurrentValue(value);
+
+    // Set initial color or use the color from activeColors array
+    const updatedColor = activeColors[Math.round(value) - 1] || activeColor;
+    setColor(updatedColor);
+  }, [value, activeColors, activeColor]);
   return (
     <>
       <div
