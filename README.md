@@ -1,6 +1,8 @@
 # react-stars :star:
 ###### A simple star rating component for your React projects
 
+[![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/ziaulhoque24)
+
 ![React Rating stars](http://i.imgur.com/VDbzbqF.gif)
 
 ### Get started quickly
